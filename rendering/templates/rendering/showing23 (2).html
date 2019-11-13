@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+
+{% load staticfiles %}
+
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Arty shapes on the web</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="/static/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  
+  <!-- Custom fonts for this template -->
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,200i,300,300i,400,400i,600,600i,700,700i,900,900i" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Merriweather:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
+  <link href="/static/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+
+
+  <link href="/static/css/bootstrap-imageupload.css" rel="stylesheet">
+  <!-- Custom styles for this template -->
+  <link href="/static/css/coming-soon.min.css" rel="stylesheet">
+    <link href="/static/css/input.css" rel="stylesheet">
+  <link rel="stylesheet" href="bootstrap/bootstrap.css">
+  <link rel="stylesheet" href="bootstrap/bootstrap-theme.css">
+    
+    <link rel="stylesheet" href="/static/css/simplelightbox.min.css">
+	 <style>
+.dowebok { width: 790px; margin: 0 auto; font-size: 0;}
+.dowebok a { display: inline-block; width: 150px; margin: 5px;}
+.dowebok .big { width: 300px;}
+.dowebok img { width: 100%;}
+</style>
+  <!---online--->
+ <style>
+        #lab-file {
+            font-size: 19px;
+            padding: 10px 30px;
+            background:#ba7c37;
+            color: #FFF;
+            border: none;
+            border-radius: 5px;
+        }
+        #uploadFile {
+           display:none
+        }
+ 
+    </style>
+    <!--不需要再次引用jquery-->
+  
+
+
+   <!---online--->
+  
+
+</head>
+
+<body>
+
+  <div class="overlay"></div>
+  <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
+    <source src="/static/video/bg.mp4" type="video/mp4">
+  </video>
+
+  <div class="masthead">
+    <div class="masthead-bg"></div>
+    <div class="container h-100">
+      <div class="row h-100">
+        <div class="col-12 my-auto">
+          <div class="masthead-content text-white py-5 py-md-0">
+            <h1 class="mb-3">Arty shapes on the web</h1>
+            <p class="mb-5">Start now ! <br/>
+			Create your own <strong>abstract art work</strong></p>
+            <div class="input-group input-group-newsletter">
+           <div class="dowebok">
+ {% for i in img %}   
+ 
+		
+		
+         <a href="{{ MEDIA_URL }}{{ i.document }}" class="big"><img src="{{ MEDIA_URL }}{{ i.document }}" alt="" title="type in description" onload="ReSizePic(this);"></a>
+        
+       {% endfor %} 
+	<div id="info"> </div>
+	</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="social-icons">
+    <ul class="list-unstyled text-center mb-0">
+      <li class="list-unstyled-item">
+        <a href="https://www.facebook.com/Arty-shape-on-the-web-2291212624435148/">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </li>
+      <li class="list-unstyled-item">
+        <a href="https://www.facebook.com/Arty-shape-on-the-web-2291212624435148/">
+          <i class="fab fa-facebook-f"></i>
+        </a>
+      </li>
+      <li class="list-unstyled-item">
+        <a href="#">
+          <i class="fab fa-instagram"></i>
+        </a>
+      </li>
+    </ul>
+  </div>
+
+  <!-- Bootstrap core JavaScript -->
+  
+  
+  
+  <script src="/static/vendor/jquery/jquery.min.js"></script>
+  <script src="/static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Custom scripts for this template -->
+  <script src="/static/js/coming-soon.min.js"></script>
+  
+  <script src="/static/js/jquery-1.11.3.min.js"></script>
+<script src="/static/js/simple-lightbox.min.js"></script>
+<script>
+$(function(){
+	$('.dowebok a').simpleLightbox();
+});
+</script>
+
+<script type="text/javascript">
+function ReSizePic(ThisPic){
+    var RePicWidth = 200; //这里修改为您想显示的宽度值
+
+    //============以下代码请勿修改==================================
+
+    var TrueWidth = ThisPic.width;    //图片实际宽度
+    var TrueHeight = ThisPic.height;  //图片实际高度
+    var Multiple = TrueWidth / RePicWidth;  //图片缩小(放大)的倍数
+
+    ThisPic.width = RePicWidth;  //图片显示的可视宽度
+    ThisPic.height = TrueHeight / Multiple;  //图片显示的可视高度
+}
+</script>
+  
+</body>
+
+</html>
